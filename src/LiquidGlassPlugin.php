@@ -5,6 +5,7 @@ namespace Osama\FilamentLiquidGlass;
 use Filament\Contracts\Plugin;
 use Filament\Enums\ThemeMode;
 use Filament\Panel;
+use Filament\Support\Assets\Css;
 use Filament\Support\Colors\Color;
 use Filament\View\PanelsRenderHook;
 use Illuminate\Contracts\Support\Htmlable;
@@ -30,16 +31,33 @@ class LiquidGlassPlugin implements Plugin
      */
     public static function make(array $overrides = []): static
     {
-        $plugin = app(static::class);
+        return app(static::class)->using($overrides);
+    }
 
-        $plugin->overrides = $overrides;
+    /**
+     * Access the plugin instance/config from anywhere after the panel boots.
+     */
+    public static function get(): static
+    {
+        /** @var static $plugin */
+        $plugin = filament(app(static::class)->getId());
 
         return $plugin;
     }
 
+    /**
+     * @param  array<string, mixed>  $overrides  Deep-merged over the current overrides.
+     */
+    public function using(array $overrides): static
+    {
+        $this->overrides = array_replace_recursive($this->overrides, $overrides);
+
+        return $this;
+    }
+
     public function getId(): string
     {
-        return 'liquid-glass';
+        return 'osamaelnagar/filament-liquid-glass';
     }
 
     /**
@@ -67,14 +85,11 @@ class LiquidGlassPlugin implements Plugin
 
         $this->registerPanelOptions($panel, $config);
 
-        // Served by the package's own route (see LiquidGlassServiceProvider),
-        // and only linked from the panel that registered the plugin. Filament
-        // registers panel assets globally, so a plain CSS asset would leak
-        // onto other panels using a different theme.
-        $panel->renderHook(
-            PanelsRenderHook::HEAD_END,
-            fn (): string => '<link rel="stylesheet" href="'.e($this->getCssUrl()).'">',
-        );
+        // Panel assets: Filament only loads these on the panel that booted the
+        // plugin (verified in Filament 5.11), so other panels keep their theme.
+        $panel->assets([
+            Css::make('liquid-glass', $this->getCssPath()),
+        ], package: 'osamaelnagar/filament-liquid-glass');
 
         $panel->renderHook(
             PanelsRenderHook::BODY_START,
@@ -92,11 +107,6 @@ class LiquidGlassPlugin implements Plugin
     public function getCssPath(): string
     {
         return dirname(__DIR__).'/resources/css/liquid-glass.css';
-    }
-
-    public function getCssUrl(): string
-    {
-        return route('filament-liquid-glass.css').'?v='.filemtime($this->getCssPath());
     }
 
     /**

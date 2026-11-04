@@ -27,6 +27,7 @@
 
 ```bash
 composer require osamaelnagar/filament-liquid-glass
+php artisan filament:assets
 ```
 
 ```php
@@ -38,7 +39,7 @@ return $panel
     // ...
 ```
 
-That's the zero-config setup: the theme, ambient art, and glass surfaces are all wired automatically.
+That's the zero-config setup: the theme, ambient art, and glass surfaces are all wired automatically. `filament:assets` publishes the panel CSS to `public/css/osamaelnagar/filament-liquid-glass/`; re-run it after package updates.
 
 Want to customize? Publish the config (or pass overrides inline — see [Configuration](#configuration)):
 
@@ -46,7 +47,7 @@ Want to customize? Publish the config (or pass overrides inline — see [Configu
 php artisan vendor:publish --tag=filament-liquid-glass-config
 ```
 
-> Served as **plain CSS** from a package route — no Tailwind/npm build in your app. The plugin links it from only the panel that registered it, so it doesn't leak into other panels with a different theme.
+> Served as **plain CSS** — no Tailwind/npm build in your app. It's registered as a panel asset, so Filament only loads it on the panel that uses the plugin.
 
 ---
 
@@ -263,16 +264,16 @@ The palette is **not** part of the glass config — the theme reads the panel's 
 ## How it is wired (for maintainers)
 
 ```
-src/LiquidGlassPlugin.php          panel-injected: head CSS link, render hooks, panel options
-src/LiquidGlassServiceProvider.php config + views + publish tags + CSS route
-resources/css/liquid-glass.css     plain unlayered CSS (served by ThemeCssController)
+src/LiquidGlassPlugin.php          panel-injected: CSS asset, render hooks, panel options
+src/LiquidGlassServiceProvider.php config + views + publish tags
+resources/css/liquid-glass.css     plain unlayered CSS, registered as a panel asset
 resources/views/ambient.blade.php  art layers: aurora/image/video/html/view/layers
 resources/views/style.blade.php    config → CSS variables + floating chrome rules (STYLES_AFTER)
 config/filament-liquid-glass.php   documented defaults
-src/Http/Controllers/ThemeCssController.php  panel-scoped, long-cached stylesheet route
+
 ```
 
-Order of loading: Filament's stock stylesheet (layered) → package CSS `<link>` from the panel `HEAD_END` hook (unlayered, wins) → the `STYLES_AFTER` config style (wins over both). That is why overrides work without `!important`.
+Order of loading: Filament's stock stylesheet (layered) → the package's panel CSS asset (unlayered, wins) → the `STYLES_AFTER` config style (wins over both). That is why overrides work without `!important`.
 
 **Accessibility / performance notes**
 
@@ -285,7 +286,7 @@ Order of loading: Filament's stock stylesheet (layered) → package CSS `<link>`
 
 - Config: `php artisan vendor:publish --tag=filament-liquid-glass-config`
 - Views (to override ambient/style): `php artisan vendor:publish --tag=filament-liquid-glass-views`
-- CSS is served by the package route `vendor/filament-liquid-glass/theme.css` (long-cache headers, versioned by file mtime); no publish/copy step is required. If you use a strict CSP, allow `style-src 'self'`.
+- Panel CSS is published with `php artisan filament:assets` into `public/css/osamaelnagar/filament-liquid-glass/`; re-run it after package updates.
 
 ## Requirements
 
@@ -297,7 +298,7 @@ MIT licensed.
 
 ## Caveats
 
-- Filament panel assets are registered application-wide; this package intentionally serves its CSS through a package route and links it from `HEAD_END` on the registering panel only. Don't replace that with `Css::make()` unless you're okay with the CSS loading on every panel.
+- Filament panel assets are registered per panel: the plugin uses `$panel->assets()` in `register()`, so panels that don't install the plugin never load the theme. Run `php artisan filament:assets` after install/update.
 - The package does not publish or override Filament vendor views.
 - It does not force a palette; pass `->colors()` on the panel (or set `palette` in config) as usual.
 - Custom art config values are trusted server-side config (raw HTML/view layers are rendered as-is).
