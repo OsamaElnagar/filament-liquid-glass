@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/OsamaElnagar/filament-liquid-glass/main/art/cover.jpg" alt="Filament Liquid Glass — the same panel split diagonally between the dark and light themes" width="100%">
+  <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/cover.jpg" alt="Filament Liquid Glass — the same panel split diagonally between the dark and light themes" width="100%">
 </p>
 
 <h1 align="center">Filament Liquid Glass</h1>
@@ -55,38 +55,38 @@ php artisan vendor:publish --tag=filament-liquid-glass-config
 <table>
   <tr>
     <td align="center" width="50%">
-      <img src="https://raw.githubusercontent.com/OsamaElnagar/filament-liquid-glass/main/art/screenshots/dashboard-dark.jpg" alt="Dark dashboard with a floating glass sidebar, floating topbar and ambient art">
+      <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/screenshots/dashboard-dark.jpg" alt="Dark dashboard with a floating glass sidebar, floating topbar and ambient art">
       <br><sub><b>Dark</b> — floating sidebar + topbar over ambient art</sub>
     </td>
     <td align="center" width="50%">
-      <img src="https://raw.githubusercontent.com/OsamaElnagar/filament-liquid-glass/main/art/screenshots/dashboard-light.jpg" alt="Light dashboard with a floating glass sidebar, floating topbar and pastel ambient art">
+      <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/screenshots/dashboard-light.jpg" alt="Light dashboard with a floating glass sidebar, floating topbar and pastel ambient art">
       <br><sub><b>Light</b> — same panel, pastel art and milk glass</sub>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://raw.githubusercontent.com/OsamaElnagar/filament-liquid-glass/main/art/screenshots/login-dark.jpg" alt="Glass sign-in card over a dark nebula artwork">
+      <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/screenshots/login-dark.jpg" alt="Glass sign-in card over a dark nebula artwork">
       <br><sub><b>Sign-in</b> — image artwork + custom SVG objects behind the glass</sub>
     </td>
     <td align="center">
-      <img src="https://raw.githubusercontent.com/OsamaElnagar/filament-liquid-glass/main/art/screenshots/dropdown-dark.jpg" alt="User menu dropdown open over the glass topbar">
+      <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/screenshots/dropdown-dark.jpg" alt="User menu dropdown open over the glass topbar">
       <br><sub><b>Menus & popovers</b> — nested glass that stays legible</sub>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://raw.githubusercontent.com/OsamaElnagar/filament-liquid-glass/main/art/screenshots/collapsed-dark.jpg" alt="Collapsed floating sidebar rail with only icons">
+      <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/screenshots/collapsed-dark.jpg" alt="Collapsed floating sidebar rail with only icons">
       <br><sub><b>Collapsed rail</b> — margins and radius survive the collapse</sub>
     </td>
     <td align="center">
-      <img src="https://raw.githubusercontent.com/OsamaElnagar/filament-liquid-glass/main/art/screenshots/theme-switcher.jpg" alt="Theme switcher open in the topbar">
+      <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/screenshots/theme-switcher.jpg" alt="Theme switcher open in the topbar">
       <br><sub><b>Dark ⇄ Light</b> — token sets for both modes</sub>
     </td>
   </tr>
 </table>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/OsamaElnagar/filament-liquid-glass/main/art/screenshots/mobile-dark.jpg" alt="Mobile layout on a narrow screen with full-bleed chrome" width="300">
+  <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/screenshots/mobile-dark.jpg" alt="Mobile layout on a narrow screen with full-bleed chrome" width="300">
   <br><sub><b>Mobile</b> — floating chrome steps aside; full-bleed Filament layout</sub>
 </p>
 
