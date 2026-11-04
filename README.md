@@ -5,7 +5,7 @@ A deep **Liquid Glass theme + configurable chrome** for [Filament v5](https://fi
 **By [Osama Mohammed Elnagar](https://github.com/OsamaElnagar)** · [github.com/OsamaElnagar/filament-liquid-glass](https://github.com/OsamaElnagar/filament-liquid-glass)
 
 ```
-composer require osama/filament-liquid-glass
+composer require osamaelnagar/filament-liquid-glass
 ```
 
 ```php
@@ -229,17 +229,17 @@ MIT licensed.
 The package is plain PHP/CSS/Blade — no build step. To publish it:
 
 1. Move it to its own repository (or a monorepo package path) and tag a semver release (`v1.0.0`); Packagist reads tags.
-2. Submit **[github.com/OsamaElnagar/filament-liquid-glass](https://github.com/OsamaElnagar/filament-liquid-glass)** at [packagist.org](https://packagist.org/packages/submit) so `composer require osama/filament-liquid-glass` works without a VCS entry. Until then, consumers can add it as a VCS repository:
+2. Submit **[github.com/OsamaElnagar/filament-liquid-glass](https://github.com/OsamaElnagar/filament-liquid-glass)** at [packagist.org](https://packagist.org/packages/submit) so `composer require osamaelnagar/filament-liquid-glass` works without a VCS entry. Until then, consumers can add it as a VCS repository:
 
 ```json
 "repositories": [{ "type": "vcs", "url": "https://github.com/OsamaElnagar/filament-liquid-glass" }],
-"require": { "osama/filament-liquid-glass": "^1.0" }
+"require": { "osamaelnagar/filament-liquid-glass": "^1.0" }
 ```
 3. In this repo it is consumed through a path repository:
 
 ```json
 "repositories": [{ "type": "path", "url": "packages/filament-liquid-glass", "options": { "symlink": true } }],
-"require": { "osama/filament-liquid-glass": "@dev" }
+"require": { "osamaelnagar/filament-liquid-glass": "@dev" }
 ```
 
 4. Run the package tests (`tests/Feature/LiquidGlassPackageTest.php`) and the browser QA harness (`tools/theme-qa`) against the `/glass` demo panel before tagging.

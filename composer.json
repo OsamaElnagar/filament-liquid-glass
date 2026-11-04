@@ -1,6 +1,6 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "osama/filament-liquid-glass",
+    "name": "osamaelnagar/filament-liquid-glass",
     "description": "Liquid Glass theme + configurable chrome for Filament v5 panels: ambient art layers (aurora, images, custom HTML/objects/views), floating/collapsible sidebar, floating/sticky topbar, and a deep glass surface system.",
     "type": "library",
     "license": "MIT",
