@@ -228,7 +228,7 @@ MIT licensed.
 
 The package is plain PHP/CSS/Blade — no build step. To publish it:
 
-1. Move it to its own repository (or a monorepo package path) and tag a semver release (`v1.0.0`); Packagist reads tags.
+1. The package repository is [github.com/OsamaElnagar/filament-liquid-glass](https://github.com/OsamaElnagar/filament-liquid-glass); tag a semver release (`v1.0.1`) — Packagist reads tags.
 2. Submit **[github.com/OsamaElnagar/filament-liquid-glass](https://github.com/OsamaElnagar/filament-liquid-glass)** at [packagist.org](https://packagist.org/packages/submit) so `composer require osamaelnagar/filament-liquid-glass` works without a VCS entry. Until then, consumers can add it as a VCS repository:
 
 ```json
