@@ -1,10 +1,31 @@
-# Filament Liquid Glass — by Osama
+<p align="center">
+  <img src="https://raw.githubusercontent.com/OsamaElnagar/filament-liquid-glass/main/art/cover.jpg" alt="Filament Liquid Glass — the same panel split diagonally between the dark and light themes" width="100%">
+</p>
 
-A deep **Liquid Glass theme + configurable chrome** for [Filament v5](https://filamentphp.com) panels. Add it with one line, then customize the art behind the glass, the glass itself, and the sidebar/topbar layout from config — no CSS build step required.
+<h1 align="center">Filament Liquid Glass</h1>
 
-**By [Osama Mohammed Elnagar](https://github.com/OsamaElnagar)** · [github.com/OsamaElnagar/filament-liquid-glass](https://github.com/OsamaElnagar/filament-liquid-glass)
+<p align="center">
+  <strong>A deeply configurable liquid-glass theme for <a href="https://filamentphp.com">Filament v5</a> panels.</strong><br>
+  Ambient art behind the glass · floating sidebar · floating or sticky topbar · dark + light · zero build step.
+</p>
 
-```
+<p align="center">
+  <a href="https://packagist.org/packages/osamaelnagar/filament-liquid-glass"><img src="https://img.shields.io/packagist/v/osamaelnagar/filament-liquid-glass?style=flat-square&color=6f7dff" alt="Latest version"></a>
+  <a href="https://packagist.org/packages/osamaelnagar/filament-liquid-glass"><img src="https://img.shields.io/packagist/dt/osamaelnagar/filament-liquid-glass?style=flat-square&color=14c9de" alt="Total downloads"></a>
+  <a href="https://github.com/OsamaElnagar/filament-liquid-glass"><img src="https://img.shields.io/badge/Filament-v5-b6aaff?style=flat-square" alt="Filament v5"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-22d3a7?style=flat-square" alt="MIT license"></a>
+  <a href="https://github.com/OsamaElnagar/filament-liquid-glass/stargazers"><img src="https://img.shields.io/github/stars/OsamaElnagar/filament-liquid-glass?style=flat-square&color=ff9bd6" alt="GitHub stars"></a>
+</p>
+
+<p align="center">
+  By <a href="https://github.com/OsamaElnagar"><strong>Osama Mohammed Elnagar</strong></a> · <a href="https://github.com/OsamaElnagar/filament-liquid-glass">GitHub</a> · <a href="https://packagist.org/packages/osamaelnagar/filament-liquid-glass">Packagist</a>
+</p>
+
+---
+
+## Install
+
+```bash
 composer require osamaelnagar/filament-liquid-glass
 ```
 
@@ -17,7 +38,57 @@ return $panel
     // ...
 ```
 
-> The theme is shipped as **plain CSS** (no Tailwind build on the consumer side) and served by the package's own cacheable route. The plugin links it from **only the panel that registered it**, so installing the package in a multi-panel app does not leak the theme onto other panels. It overrides Filament's layered stylesheet with unlayered rules.
+That's the zero-config setup: the theme, ambient art, and glass surfaces are all wired automatically.
+
+Want to customize? Publish the config (or pass overrides inline — see [Configuration](#configuration)):
+
+```bash
+php artisan vendor:publish --tag=filament-liquid-glass-config
+```
+
+> Served as **plain CSS** from a package route — no Tailwind/npm build in your app. The plugin links it from only the panel that registered it, so it doesn't leak into other panels with a different theme.
+
+---
+
+## Screenshots
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://raw.githubusercontent.com/OsamaElnagar/filament-liquid-glass/main/art/screenshots/dashboard-dark.jpg" alt="Dark dashboard with a floating glass sidebar, floating topbar and ambient art">
+      <br><sub><b>Dark</b> — floating sidebar + topbar over ambient art</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="https://raw.githubusercontent.com/OsamaElnagar/filament-liquid-glass/main/art/screenshots/dashboard-light.jpg" alt="Light dashboard with a floating glass sidebar, floating topbar and pastel ambient art">
+      <br><sub><b>Light</b> — same panel, pastel art and milk glass</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://raw.githubusercontent.com/OsamaElnagar/filament-liquid-glass/main/art/screenshots/login-dark.jpg" alt="Glass sign-in card over a dark nebula artwork">
+      <br><sub><b>Sign-in</b> — image artwork + custom SVG objects behind the glass</sub>
+    </td>
+    <td align="center">
+      <img src="https://raw.githubusercontent.com/OsamaElnagar/filament-liquid-glass/main/art/screenshots/dropdown-dark.jpg" alt="User menu dropdown open over the glass topbar">
+      <br><sub><b>Menus & popovers</b> — nested glass that stays legible</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://raw.githubusercontent.com/OsamaElnagar/filament-liquid-glass/main/art/screenshots/collapsed-dark.jpg" alt="Collapsed floating sidebar rail with only icons">
+      <br><sub><b>Collapsed rail</b> — margins and radius survive the collapse</sub>
+    </td>
+    <td align="center">
+      <img src="https://raw.githubusercontent.com/OsamaElnagar/filament-liquid-glass/main/art/screenshots/theme-switcher.jpg" alt="Theme switcher open in the topbar">
+      <br><sub><b>Dark ⇄ Light</b> — token sets for both modes</sub>
+    </td>
+  </tr>
+</table>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/OsamaElnagar/filament-liquid-glass/main/art/screenshots/mobile-dark.jpg" alt="Mobile layout on a narrow screen with full-bleed chrome" width="300">
+  <br><sub><b>Mobile</b> — floating chrome steps aside; full-bleed Filament layout</sub>
+</p>
 
 ---
 
@@ -26,7 +97,7 @@ return $panel
 - Glass surfaces for the whole panel: sidebar, topbar, pages, cards/sections, tables, stats, modals, dropdowns/popovers, form fields, badges, tabs, pagination, callouts, rich editor, file upload, lazy skeletons.
 - Ambient **art behind the glass**, driven by config:
   - `aurora` — drifting colour blobs (default),
-  - `image` — one or more artworks, with dark/light variants and overlays,
+  - `image` — one or more artworks, with dark/light variants and per-mode overlays,
   - `video` — a muted looping video layer,
   - `html` / `view` — **any custom objects** (SVG shapes, rings, floating orbs, particles, a canvas…),
   - `layers` — an ordered stack mixing all of the above.
@@ -223,27 +294,6 @@ Order of loading: Filament's stock stylesheet (layered) → package CSS `<link>`
 - The theme is a panel plugin, not a full app template; pages/resources remain yours.
 
 MIT licensed.
-
-## Releasing
-
-The package is plain PHP/CSS/Blade — no build step. To publish it:
-
-1. The package repository is [github.com/OsamaElnagar/filament-liquid-glass](https://github.com/OsamaElnagar/filament-liquid-glass); tag a semver release (`v1.0.1`) — Packagist reads tags.
-2. Submit **[github.com/OsamaElnagar/filament-liquid-glass](https://github.com/OsamaElnagar/filament-liquid-glass)** at [packagist.org](https://packagist.org/packages/submit) so `composer require osamaelnagar/filament-liquid-glass` works without a VCS entry. Until then, consumers can add it as a VCS repository:
-
-```json
-"repositories": [{ "type": "vcs", "url": "https://github.com/OsamaElnagar/filament-liquid-glass" }],
-"require": { "osamaelnagar/filament-liquid-glass": "^1.0" }
-```
-3. In this repo it is consumed through a path repository:
-
-```json
-"repositories": [{ "type": "path", "url": "packages/filament-liquid-glass", "options": { "symlink": true } }],
-"require": { "osamaelnagar/filament-liquid-glass": "@dev" }
-```
-
-4. Run the package tests (`tests/Feature/LiquidGlassPackageTest.php`) and the browser QA harness (`tools/theme-qa`) against the `/glass` demo panel before tagging.
-5. If you change `resources/css/liquid-glass.css`, bump the package version — the stylesheet URL is cache-busted by file mtime, so consumers get the new file on deploy.
 
 ## Caveats
 
