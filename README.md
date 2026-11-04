@@ -15,6 +15,8 @@
   <a href="https://github.com/OsamaElnagar/filament-liquid-glass"><img src="https://img.shields.io/badge/Filament-v5-b6aaff?style=flat-square" alt="Filament v5"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-22d3a7?style=flat-square" alt="MIT license"></a>
   <a href="https://github.com/OsamaElnagar/filament-liquid-glass/stargazers"><img src="https://img.shields.io/github/stars/OsamaElnagar/filament-liquid-glass?style=flat-square&color=ff9bd6" alt="GitHub stars"></a>
+  <a href="https://github.com/OsamaElnagar/filament-liquid-glass/actions/workflows/tests.yml"><img src="https://github.com/OsamaElnagar/filament-liquid-glass/actions/workflows/tests.yml/badge.svg" alt="Tests"></a>
+  <a href="https://packagist.org/packages/osamaelnagar/filament-liquid-glass"><img src="https://img.shields.io/badge/Laravel-11--13-ff2d20?style=flat-square" alt="Laravel 11–13"></a>
 </p>
 
 <p align="center">
