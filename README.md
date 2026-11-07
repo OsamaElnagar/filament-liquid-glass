@@ -104,6 +104,7 @@ php artisan vendor:publish --tag=filament-liquid-glass-config
   - `video` — a muted looping video layer,
   - `html` / `view` — **any custom objects** (SVG shapes, rings, floating orbs, particles, a canvas…),
   - `layers` — an ordered stack mixing all of the above.
+- **Liquid-glass material:** clear light glass with a spectral rim, top-edge specular sheen and adaptive tint; smoky dark glass with a luminous edge. True optical refraction is approximated in CSS (see [Performance](#performance)).
 - **Floating / isolated sidebar** with margin + radius, plus collapsible-on-desktop modes.
 - **Floating or attached topbar**, sticky or scroll-away, with responsive fallbacks on mobile.
 - Dark + light token sets, grain, reduced-motion/reduced-transparency/print fallbacks, and popover stacking fixes (the `backdrop-filter` traps).
@@ -232,8 +233,8 @@ A full layer list is possible; each entry supports:
     'blur' => 24,               // px
     'saturation' => 180,        // %
     'brightness' => 1.12,
-    'dark_tint' => 0.065,       // white alpha over dark art (lower = clearer glass)
-    'light_tint' => 0.58,
+    'dark_tint' => 0.055,       // white alpha over dark art (lower = clearer glass)
+    'light_tint' => 0.42,
     'radius' => 24,
     'popover_opacity' => 0.975, // near-opaque popovers (required for legibility)
 ],
@@ -265,9 +266,11 @@ The palette is **not** part of the glass config — the theme reads the panel's 
 
 ## Performance
 
+- This is a **CSS approximation of Apple’s Liquid Glass**: translucency, saturation/blur where it matters, specular sheen, spectral rim and adaptive tint. True real-time **optical refraction/lensing** (content bending at the edges) requires SVG displacement or WebGL; that is deliberately not enabled by default because it is expensive and not reliably supported.
+
 - **Ambient motion is opt-in** (`ambient.aurora.motion => true`). Animating four large blurred, blended layers keeps Chrome's compositor busy every frame, even when the page is idle — very noticeable on Windows and low-power GPUs. Static art keeps the same look with zero idle compositing.
 - Keep the ambient layer static unless you specifically want motion; if you enable it, test on your target hardware.
-- **Blur is limited to overlays** (modals, dropdowns, the auth card). Cards, tables, stats, inputs and chrome use translucent tints instead — a blurred layer per card/table was the remaining GPU cost. Lower `glass.blur` (e.g. `16`) if overlays still feel heavy on low-end machines.
+- **Blur is limited to chrome + overlays** (sidebar, topbar, modals, dropdowns, the auth card). Cards, tables, stats and inputs use translucent tints + spectral rims instead — a blurred layer per card/table was the remaining GPU cost. Lower `glass.blur` (e.g. `16`) if chrome/overlays still feel heavy on low-end machines.
 - Avoid large full-screen videos; a single image artwork is cheaper than animated blobs.
 
 ---

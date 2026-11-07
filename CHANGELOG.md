@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.3.0] - 2026-11-07
+
+### Changed
+
+- **Liquid Glass v2 material.** Light mode is much clearer and more luminous: lower white tint (`.42`), higher saturation, a broad top-left specular sheen, a cyan/pink spectral rim, stronger inner edge highlight and softer depth shadow. Dark mode gets the same edge treatment with a smoky low-alpha tint.
+- Chrome (topbar/sidebar) is translucent with a subtle backdrop blur again; cards remain tint/rim-based for performance.
+- Updated defaults: `glass.light_tint` `.58 → .42`, `glass.dark_tint` `.065 → .055`.
+
+
 ## [1.2.2] - 2026-11-07
 
 ### Fixed

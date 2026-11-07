@@ -102,8 +102,8 @@ return [
         'blur' => 24,               // px
         'saturation' => 180,        // %
         'brightness' => 1.12,
-        'dark_tint' => 0.065,       // white alpha over the dark ambient
-        'light_tint' => 0.58,
+        'dark_tint' => 0.055,       // white alpha over the dark ambient
+        'light_tint' => 0.42,
         'radius' => 24,             // px (xl cards)
         'radius_lg' => 18,
         'radius_md' => 12,

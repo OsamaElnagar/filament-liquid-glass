@@ -27,13 +27,16 @@
 
     /* Glass */
     --lg-glass-tint: 255 255 255;
-    --lg-glass-alpha: 0.58;
-    --lg-glass-alpha-strong: 0.72;
+    --lg-glass-alpha: 0.42;
+    --lg-glass-alpha-strong: 0.56;
     --lg-glass-blur: 20px;
-    --lg-glass-sat: 150%;
-    --lg-glass-bright: 1.05;
-    --lg-glass-border: rgb(255 255 255 / 0.75);
-    --lg-glass-highlight: rgb(255 255 255 / 0.95);
+    --lg-glass-sat: 160%;
+    --lg-glass-bright: 1.06;
+    --lg-glass-border: rgb(255 255 255 / 0.78);
+    --lg-glass-highlight: rgb(255 255 255 / 0.98);
+    --lg-sheen: 0.66;
+    --lg-rim-a: 0.20;
+    --lg-rim-b: 0.26;
     --lg-glass-shadow: 0 32px 64px -32px rgb(58 68 130 / 0.38), 0 8px 20px -12px rgb(58 68 130 / 0.22);
 
     /* Radii + accent gradient */
@@ -60,13 +63,16 @@ html.dark {
     --lg-line: rgb(255 255 255 / 0.1);
 
     --lg-glass-tint: 255 255 255;
-    --lg-glass-alpha: 0.065;
-    --lg-glass-alpha-strong: 0.1;
+    --lg-glass-alpha: 0.055;
+    --lg-glass-alpha-strong: 0.085;
     --lg-glass-blur: 24px;
     --lg-glass-sat: 180%;
     --lg-glass-bright: 1.12;
-    --lg-glass-border: rgb(255 255 255 / 0.14);
-    --lg-glass-highlight: rgb(255 255 255 / 0.28);
+    --lg-glass-border: rgb(255 255 255 / 0.16);
+    --lg-glass-highlight: rgb(255 255 255 / 0.34);
+    --lg-sheen: 0.10;
+    --lg-rim-a: 0.12;
+    --lg-rim-b: 0.14;
     --lg-glass-shadow: 0 40px 80px -32px rgb(1 4 18 / 0.95), 0 10px 26px -16px rgb(1 4 18 / 0.7);
 
     --lg-aurora-1: #5b4bff;
@@ -209,18 +215,20 @@ html:not(.dark) .lg-grain {
     border: 1px solid var(--lg-glass-border);
     border-radius: var(--lg-r-xl);
     background:
-        radial-gradient(150% 120% at 8% -18%, rgb(var(--lg-glass-tint) / 0.22), transparent 58%),
+        radial-gradient(135% 100% at 14% -24%, rgb(var(--lg-glass-tint) / var(--lg-sheen)), transparent 55%),
+        radial-gradient(90% 80% at 108% 116%, rgb(155 233 245 / var(--lg-rim-b)), transparent 65%),
         linear-gradient(
             160deg,
-            rgb(var(--lg-glass-tint) / calc(var(--lg-glass-alpha) + 0.04)),
+            rgb(var(--lg-glass-tint) / calc(var(--lg-glass-alpha) + 0.05)),
             rgb(var(--lg-glass-tint) / var(--lg-glass-alpha)) 52%,
-            rgb(var(--lg-glass-tint) / calc(var(--lg-glass-alpha) * 0.6))
+            rgb(var(--lg-glass-tint) / calc(var(--lg-glass-alpha) * 0.72))
         );
     box-shadow:
         inset 0 1px 0 var(--lg-glass-highlight),
-        inset 0 -1px 0 rgb(255 255 255 / 0.06),
-        inset 1px 0 0 rgb(255 255 255 / 0.05),
-        inset -1px 0 0 rgb(255 255 255 / 0.05),
+        inset 0 0 0 1px rgb(255 255 255 / 0.22),
+        inset 1px 0 0 rgb(255 154 214 / var(--lg-rim-a)),
+        inset -1px 0 0 rgb(108 232 255 / var(--lg-rim-b)),
+        inset 0 -24px 40px rgb(70 50 140 / 0.05),
         var(--lg-glass-shadow);
 }
 
@@ -246,9 +254,10 @@ html.dark .fi-modal-window,
 html.dark .fi-dropdown-panel {
     box-shadow:
         inset 0 1px 0 var(--lg-glass-highlight),
-        inset 0 -1px 0 rgb(255 255 255 / 0.06),
-        inset 1px 0 0 rgb(255 255 255 / 0.07),
-        inset -1px 0 0 rgb(255 255 255 / 0.07),
+        inset 0 0 0 1px rgb(255 255 255 / 0.08),
+        inset 1px 0 0 rgb(255 154 214 / var(--lg-rim-a)),
+        inset -1px 0 0 rgb(108 232 255 / var(--lg-rim-b)),
+        inset 0 -24px 40px rgb(0 0 0 / 0.16),
         var(--lg-glass-shadow);
 }
 
@@ -277,12 +286,15 @@ html.dark .fi-dropdown-panel {
 
 /* Topbar --------------------------------------------------------------- */
 .fi-topbar {
-    border-bottom: 1px solid var(--lg-line);
+    border-bottom: 1px solid var(--lg-glass-border);
     background:
-        radial-gradient(120% 200% at 12% -80%, rgb(var(--lg-glass-tint) / 0.16), transparent 60%),
-        rgb(var(--lg-glass-tint) / calc(var(--lg-glass-alpha) * 0.9));
+        radial-gradient(120% 200% at 12% -80%, rgb(var(--lg-glass-tint) / 0.30), transparent 60%),
+        linear-gradient(180deg, rgb(var(--lg-glass-tint) / 0.62), rgb(var(--lg-glass-tint) / 0.34));
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    backdrop-filter: blur(14px) saturate(160%);
     box-shadow:
         inset 0 1px 0 var(--lg-glass-highlight),
+        inset 0 -1px 0 rgb(255 255 255 / 0.10),
         0 18px 40px -32px rgb(1 4 18 / 0.8);
 }
 
@@ -292,21 +304,31 @@ html.dark .fi-topbar {
 
 /* Sidebar -------------------------------------------------------------- */
 .fi-sidebar {
-    border-inline-end: 1px solid var(--lg-line);
+    border-inline-end: 1px solid var(--lg-glass-border);
     background:
-        radial-gradient(140% 100% at 0% -10%, rgb(var(--lg-glass-tint) / 0.14), transparent 55%),
+        radial-gradient(140% 100% at 0% -10%, rgb(var(--lg-glass-tint) / 0.34), transparent 55%),
         linear-gradient(
             180deg,
-            rgb(var(--lg-glass-tint) / calc(var(--lg-glass-alpha) * 0.95)),
-            rgb(var(--lg-glass-tint) / calc(var(--lg-glass-alpha) * 0.6))
+            rgb(var(--lg-glass-tint) / 0.60),
+            rgb(var(--lg-glass-tint) / 0.34)
         );
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    backdrop-filter: blur(14px) saturate(160%);
     box-shadow:
-        inset -1px 0 0 rgb(255 255 255 / 0.06),
-        inset 1px 0 0 rgb(255 255 255 / 0.04);
+        inset -1px 0 0 rgb(255 255 255 / 0.18),
+        inset 0 1px 0 var(--lg-glass-highlight);
+}
+
+html.dark .fi-topbar {
+    background: linear-gradient(180deg, rgb(var(--lg-glass-tint) / 0.12), rgb(var(--lg-glass-tint) / 0.05));
+    border-bottom-color: rgb(255 255 255 / 0.08);
 }
 
 html.dark .fi-sidebar {
     border-inline-end-color: rgb(255 255 255 / 0.08);
+    background:
+        radial-gradient(140% 100% at 0% -10%, rgb(var(--lg-glass-tint) / 0.06), transparent 55%),
+        linear-gradient(180deg, rgb(var(--lg-glass-tint) / 0.10), rgb(var(--lg-glass-tint) / 0.04));
 }
 
 /* Mobile drawer keeps an opaque-enough sheet over the dimmed page. */

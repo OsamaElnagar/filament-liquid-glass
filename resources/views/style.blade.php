@@ -63,9 +63,9 @@
         --lg-glass-blur: {{ $px($glass['blur'] ?? null, 24) }};
         --lg-glass-sat: {{ $pct($glass['saturation'] ?? null, 180) }};
         --lg-glass-bright: {{ $numeric($glass['brightness'] ?? null, 1.12) }};
-        --lg-glass-alpha: {{ $numeric($glass['light_tint'] ?? null, 0.58) }};
-        --lg-glass-border: rgb(255 255 255 / 0.75);
-        --lg-glass-highlight: rgb(255 255 255 / 0.95);
+        --lg-glass-alpha: {{ $numeric($glass['light_tint'] ?? null, 0.42) }};
+        --lg-glass-border: rgb(255 255 255 / 0.78);
+        --lg-glass-highlight: rgb(255 255 255 / 0.98);
         --lg-r-xl: {{ $px($glass['radius'] ?? null, 24) }};
         --lg-r-lg: {{ $px($glass['radius_lg'] ?? null, 18) }};
         --lg-r-md: {{ $px($glass['radius_md'] ?? null, 12) }};
@@ -96,9 +96,9 @@
     }
 
     html.dark {
-        --lg-glass-alpha: {{ $numeric($glass['dark_tint'] ?? null, 0.065) }};
-        --lg-glass-border: rgb(255 255 255 / 0.14);
-        --lg-glass-highlight: rgb(255 255 255 / 0.28);
+        --lg-glass-alpha: {{ $numeric($glass['dark_tint'] ?? null, 0.055) }};
+        --lg-glass-border: rgb(255 255 255 / 0.16);
+        --lg-glass-highlight: rgb(255 255 255 / 0.34);
 
         --lg-aurora-1: {{ $darkColors[0] }};
         --lg-aurora-2: {{ $darkColors[1] }};
