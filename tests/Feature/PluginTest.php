@@ -112,6 +112,23 @@ class PluginTest extends TestCase
         $this->assertStringContainsString('.fi-ta-ctn', $frosted);
     }
 
+    public function test_lens_profile_is_opt_in(): void
+    {
+        $classic = view('filament-liquid-glass::style', [
+            'config' => ['glass' => ['profile' => 'classic']],
+        ])->render();
+
+        $this->assertStringNotContainsString('Lens profile', $classic);
+
+        $lens = view('filament-liquid-glass::style', [
+            'config' => ['glass' => ['profile' => 'lens', 'blur' => 28, 'saturation' => 180]],
+        ])->render();
+
+        $this->assertStringContainsString('Lens profile', $lens);
+        $this->assertStringContainsString('blur(var(--lg-glass-blur)) saturate(var(--lg-glass-sat))', $lens);
+        $this->assertStringContainsString('inset 1.5px 1.5px 1px -0.5px', $lens);
+    }
+
     public function test_ambient_motion_is_opt_in(): void
     {
         $static = view('filament-liquid-glass::style', [

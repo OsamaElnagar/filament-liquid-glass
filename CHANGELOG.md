@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.5.0] - 2026-11-07
+
+### Added
+
+- `glass.profile` with a new `lens` material: variable-alpha glass, 28px blur, 180% saturation, dual specular inset rims, inner glow and dual outer shadows, inspired by the Claude Liquid Glass mockup.
+- Paired `lens` demo panel with a high-contrast colored-object scene (`/glass-lens`) plus a light variant scene for light mode.
+- Tests for the lens profile and the lens panel config.
+
+
 ## [1.4.0] - 2026-11-07
 
 ### Added

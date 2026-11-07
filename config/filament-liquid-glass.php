@@ -99,6 +99,7 @@ return [
     |--------------------------------------------------------------------------
     */
     'glass' => [
+        'profile' => 'classic',    // classic | lens (Claude-style variable-alpha specular material)
         'blur' => 24,               // px
         'saturation' => 180,        // %
         'brightness' => 1.12,

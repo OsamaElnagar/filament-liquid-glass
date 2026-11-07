@@ -154,6 +154,92 @@
         }
     @endif
 
+    @if (($config['glass']['profile'] ?? 'classic') === 'lens')
+        /* Lens profile: Claude-reference variable-alpha glass with a dual specular rim. */
+        .fi-section:not(.fi-section-not-contained):not(.fi-aside),
+        .fi-ta-ctn,
+        .fi-wi-stats-overview-stat,
+        .fi-simple-main,
+        .fi-modal-window,
+        .fi-fo-repeater-item,
+        .fi-fo-builder-item {
+            -webkit-backdrop-filter: blur(var(--lg-glass-blur)) saturate(var(--lg-glass-sat));
+            backdrop-filter: blur(var(--lg-glass-blur)) saturate(var(--lg-glass-sat));
+            border: 1px solid rgb(255 255 255 / 0.34);
+            background:
+                linear-gradient(135deg,
+                    rgb(255 255 255 / 0.42) 0%,
+                    rgb(255 255 255 / 0.12) 42%,
+                    rgb(255 255 255 / 0.26) 100%);
+            box-shadow:
+                inset 1.5px 1.5px 1px -0.5px rgb(255 255 255 / 0.90),
+                inset -1.5px -1.5px 1px -0.5px rgb(255 255 255 / 0.36),
+                inset 0 0 24px rgb(255 255 255 / 0.07),
+                0 12px 40px rgb(0 12 20 / 0.25),
+                0 2px 6px rgb(0 12 20 / 0.16);
+        }
+
+        html.dark .fi-section:not(.fi-section-not-contained):not(.fi-aside),
+        html.dark .fi-ta-ctn,
+        html.dark .fi-wi-stats-overview-stat,
+        html.dark .fi-simple-main,
+        html.dark .fi-modal-window,
+        html.dark .fi-fo-repeater-item,
+        html.dark .fi-fo-builder-item {
+            border-color: rgb(255 255 255 / 0.16);
+            background:
+                linear-gradient(135deg,
+                    rgb(255 255 255 / 0.22) 0%,
+                    rgb(255 255 255 / 0.06) 42%,
+                    rgb(255 255 255 / 0.12) 100%);
+            box-shadow:
+                inset 1.5px 1.5px 1px -0.5px rgb(255 255 255 / 0.70),
+                inset -1.5px -1.5px 1px -0.5px rgb(255 255 255 / 0.22),
+                inset 0 0 24px rgb(255 255 255 / 0.05),
+                0 12px 40px rgb(0 12 20 / 0.30),
+                0 2px 6px rgb(0 12 20 / 0.18);
+        }
+
+        .fi-topbar,
+        .fi-sidebar {
+            -webkit-backdrop-filter: blur(var(--lg-glass-blur)) saturate(var(--lg-glass-sat));
+            backdrop-filter: blur(var(--lg-glass-blur)) saturate(var(--lg-glass-sat));
+        }
+
+        .fi-topbar {
+            border-bottom-color: rgb(255 255 255 / 0.30);
+            background: linear-gradient(135deg, rgb(255 255 255 / 0.34), rgb(255 255 255 / 0.08) 55%, rgb(255 255 255 / 0.18));
+            box-shadow:
+                inset 1.5px 1.5px 1px -0.5px rgb(255 255 255 / 0.80),
+                inset -1.5px -1.5px 1px -0.5px rgb(255 255 255 / 0.20),
+                0 12px 40px rgb(0 12 20 / 0.25);
+        }
+
+        .fi-sidebar {
+            border-inline-end-color: rgb(255 255 255 / 0.26);
+            background: linear-gradient(160deg, rgb(255 255 255 / 0.28), rgb(255 255 255 / 0.06) 55%, rgb(255 255 255 / 0.14));
+            box-shadow:
+                inset 1.5px 1.5px 1px -0.5px rgb(255 255 255 / 0.80),
+                inset -1.5px -1.5px 1px -0.5px rgb(255 255 255 / 0.20),
+                0 12px 40px rgb(0 12 20 / 0.20);
+        }
+
+        html.dark .fi-topbar {
+            border-bottom-color: rgb(255 255 255 / 0.14);
+            background: linear-gradient(135deg, rgb(255 255 255 / 0.18), rgb(255 255 255 / 0.04) 55%, rgb(255 255 255 / 0.10));
+        }
+
+        html.dark .fi-sidebar {
+            border-inline-end-color: rgb(255 255 255 / 0.14);
+            background: linear-gradient(160deg, rgb(255 255 255 / 0.16), rgb(255 255 255 / 0.03) 55%, rgb(255 255 255 / 0.08));
+        }
+
+        .fi-section .fi-section,
+        .fi-section .fi-ta-ctn {
+            -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+        }
+    @endif
     @if (($config['glass']['surface_blur'] ?? false) === true)
         /* Optional photographic mode: frost the content surfaces as well. */
         .fi-section:not(.fi-section-not-contained):not(.fi-aside),

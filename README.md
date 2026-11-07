@@ -238,6 +238,7 @@ A full layer list is possible; each entry supports:
     'radius' => 24,
     'popover_opacity' => 0.975, // near-opaque popovers (required for legibility)
     'surface_blur' => false,    // true = frost cards/tables too (photo backgrounds; GPU cost)
+    'profile' => 'classic',    // classic | lens (Claude-style variable-alpha specular glass)
 ],
 ```
 
