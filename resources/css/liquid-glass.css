@@ -470,6 +470,21 @@ html.dark .fi-header-heading {
 }
 
 /* Stats overview cards */
+/* Stats overview widgets wrap their stat grid in a section with horizontal
+   content padding. Strip it so the stat cards align with the page and the
+   other dashboard widgets. */
+.fi-wi-stats-overview .fi-section-content-ctn,
+.fi-wi-stats-overview .fi-section-content {
+    padding-inline: 0 !important;
+}
+
+.fi-wi-stats-overview .fi-section {
+    grid-template-columns: minmax(0, 1fr) !important;
+}
+
+.fi-wi-stats-overview .fi-section-header {
+    padding-inline: 0;
+}
 .fi-wi-stats-overview-stat {
     border-radius: var(--lg-r-lg);
     transition:

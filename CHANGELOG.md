@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.2] - 2026-11-07
+
+### Fixed
+
+- Aligned stats-overview widgets with the rest of the dashboard: removed the nested section content padding, forced a shrinkable section grid track, and removed header padding so headings, descriptions and stat cards share the page gutter on mobile and desktop.
+- Prevented the stats description from forcing the section wider than the viewport at narrow widths.
+
+
 ## [1.2.1] - 2026-11-07
 
 ### Changed
