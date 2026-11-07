@@ -111,6 +111,7 @@ class PluginTest extends TestCase
         $this->assertStringContainsString('backdrop-filter: blur(var(--lg-glass-blur))', $frosted);
         $this->assertStringContainsString('.fi-ta-ctn', $frosted);
     }
+
     public function test_ambient_motion_is_opt_in(): void
     {
         $static = view('filament-liquid-glass::style', [
