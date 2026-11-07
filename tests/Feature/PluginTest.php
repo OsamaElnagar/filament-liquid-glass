@@ -96,6 +96,21 @@ class PluginTest extends TestCase
         $this->assertSame('', trim($html));
     }
 
+    public function test_surface_blur_is_opt_in(): void
+    {
+        $static = view('filament-liquid-glass::style', [
+            'config' => ['glass' => ['surface_blur' => false]],
+        ])->render();
+
+        $this->assertStringNotContainsString('backdrop-filter: blur(var(--lg-glass-blur))', $static);
+
+        $frosted = view('filament-liquid-glass::style', [
+            'config' => ['glass' => ['surface_blur' => true]],
+        ])->render();
+
+        $this->assertStringContainsString('backdrop-filter: blur(var(--lg-glass-blur))', $frosted);
+        $this->assertStringContainsString('.fi-ta-ctn', $frosted);
+    }
     public function test_ambient_motion_is_opt_in(): void
     {
         $static = view('filament-liquid-glass::style', [

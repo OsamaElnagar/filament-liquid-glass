@@ -21,8 +21,8 @@
     /* Page */
     --lg-page: #eef1fd;
     --lg-ink: #0d1330;
-    --lg-ink-soft: rgb(13 19 48 / 0.72);
-    --lg-ink-mute: rgb(13 19 48 / 0.52);
+    --lg-ink-soft: rgb(13 19 48 / 0.80);
+    --lg-ink-mute: rgb(13 19 48 / 0.62);
     --lg-line: rgb(13 19 48 / 0.1);
 
     /* Glass */
@@ -58,8 +58,8 @@ html.dark {
 
     --lg-page: #050817;
     --lg-ink: #eef2ff;
-    --lg-ink-soft: rgb(238 242 255 / 0.72);
-    --lg-ink-mute: rgb(238 242 255 / 0.48);
+    --lg-ink-soft: rgb(238 242 255 / 0.80);
+    --lg-ink-mute: rgb(238 242 255 / 0.56);
     --lg-line: rgb(255 255 255 / 0.1);
 
     --lg-glass-tint: 255 255 255;

@@ -154,6 +154,25 @@
         }
     @endif
 
+    @if (($config['glass']['surface_blur'] ?? false) === true)
+        /* Optional photographic mode: frost the content surfaces as well. */
+        .fi-section:not(.fi-section-not-contained):not(.fi-aside),
+        .fi-ta-ctn,
+        .fi-wi-stats-overview-stat,
+        .fi-fo-repeater-item,
+        .fi-fo-builder-item {
+            -webkit-backdrop-filter: blur(var(--lg-glass-blur)) saturate(var(--lg-glass-sat))
+                brightness(var(--lg-glass-bright));
+            backdrop-filter: blur(var(--lg-glass-blur)) saturate(var(--lg-glass-sat))
+                brightness(var(--lg-glass-bright));
+        }
+
+        .fi-section .fi-section,
+        .fi-section .fi-ta-ctn {
+            -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+        }
+    @endif
     @if (($config['ambient']['aurora']['motion'] ?? false) === true)
         .lg-ambient__blob {
             animation-name: lg-drift;

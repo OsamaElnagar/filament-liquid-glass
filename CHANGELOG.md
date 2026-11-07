@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.4.0] - 2026-11-07
+
+### Added
+
+- `glass.surface_blur` (default `false`): opt-in frosted blur on cards, tables and stat surfaces. Best for photographic/full-bleed backgrounds; costs a composited blur layer per surface.
+- Multi-panel showcase (separate app demo) exercising aurora, photographic sunset, nebula, custom objects and minimal presets.
+- Increased light/dark muted-ink contrast for section descriptions, sidebar groups and table headers on photographic backgrounds.
+
+
 ## [1.3.0] - 2026-11-07
 
 ### Changed

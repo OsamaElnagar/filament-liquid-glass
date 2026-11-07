@@ -108,6 +108,7 @@ return [
         'radius_lg' => 18,
         'radius_md' => 12,
         'popover_opacity' => 0.975, // near-opaque popovers (nested backdrop roots)
+        'surface_blur' => false,    // true = frost cards/tables too (photographic backgrounds; costs GPU)
     ],
 
     /*
