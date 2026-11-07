@@ -226,6 +226,11 @@ A full layer list is possible; each entry supports:
 'ambient' => ['view' => 'glass.aurora-custom'],
 ```
 
+### Glass profiles
+
+- `profile => 'classic'` (default): the v2 material — spectral rim, top sheen, adaptive light/dark tint.
+- `profile => 'lens'`: variable-alpha glass inspired by the Claude/Apple mockup — 28px blur, 180% saturation, dual specular inset rims, inner glow and dual outer shadows. Pair it with `surface_blur => true` and a high-contrast ambient image; it is intentionally heavier.
+
 ### 4. Glass tuning
 
 ```php
