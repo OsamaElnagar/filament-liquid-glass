@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.1] - 2026-11-07
+
+### Changed
+
+- Limited `backdrop-filter` to overlays (modal, dropdown, auth card). Cards, tables, stats, inputs, badges and application chrome now use translucent tints instead; each blurred surface was a composited layer with little visible benefit over the already-soft ambient backdrop.
+- Increased chrome/sidebar tint opacity slightly to compensate for the removed blur.
+- Removed the full-screen blur from the modal backdrop and from callouts/empty states.
+- Demo panel idle backdrop-filter surfaces: 17 → 2; active animations: 4 → 0.
+
+
 ## [1.2.0] - 2026-11-07
 
 ### Changed

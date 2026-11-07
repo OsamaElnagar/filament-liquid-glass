@@ -267,7 +267,7 @@ The palette is **not** part of the glass config — the theme reads the panel's 
 
 - **Ambient motion is opt-in** (`ambient.aurora.motion => true`). Animating four large blurred, blended layers keeps Chrome's compositor busy every frame, even when the page is idle — very noticeable on Windows and low-power GPUs. Static art keeps the same look with zero idle compositing.
 - Keep the ambient layer static unless you specifically want motion; if you enable it, test on your target hardware.
-- Blur is applied to a small set of glass surfaces. Lower `glass.blur` (e.g. `16`) if scrolling feels heavy on low-end machines.
+- **Blur is limited to overlays** (modals, dropdowns, the auth card). Cards, tables, stats, inputs and chrome use translucent tints instead — a blurred layer per card/table was the remaining GPU cost. Lower `glass.blur` (e.g. `16`) if overlays still feel heavy on low-end machines.
 - Avoid large full-screen videos; a single image artwork is cheaper than animated blobs.
 
 ---
