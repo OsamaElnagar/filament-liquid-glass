@@ -118,8 +118,15 @@ html {
     position: absolute;
     border-radius: 50%;
     opacity: var(--lg-aurora-strength);
-    filter: blur(var(--lg-aurora-blur, 56px)) saturate(115%);
+    filter: blur(var(--lg-aurora-blur, 44px)) saturate(115%);
     mix-blend-mode: screen;
+}
+
+/* Motion is opt-in (add `.lg-motion` to the panel body or enable
+   `ambient.aurora.motion`): continuously animating four large blurred,
+   blend-mode layers forces the compositor to redraw every frame. Static
+   ambient art keeps the look with an idle page. */
+.lg-motion .lg-ambient__blob {
     will-change: transform;
     transform: translateZ(0);
     animation: lg-drift 30s ease-in-out infinite alternate;
@@ -127,7 +134,7 @@ html {
 
 html:not(.dark) .lg-ambient__blob {
     mix-blend-mode: normal;
-    filter: blur(64px) saturate(105%);
+    filter: blur(48px) saturate(105%);
 }
 
 .lg-ambient__blob--a {
@@ -1130,7 +1137,6 @@ html:not(.dark) .fi-ta-header .fi-section:not(.fi-section-not-contained) {
     opacity: var(--lg-art-opacity, 0.65);
     filter: blur(var(--lg-art-blur, 0px));
     transform: scale(var(--lg-art-scale, 1.02));
-    will-change: transform;
 }
 
 html.dark .lg-ambient__image--light,

@@ -99,7 +99,7 @@ php artisan vendor:publish --tag=filament-liquid-glass-config
 
 - Glass surfaces for the whole panel: sidebar, topbar, pages, cards/sections, tables, stats, modals, dropdowns/popovers, form fields, badges, tabs, pagination, callouts, rich editor, file upload, lazy skeletons.
 - Ambient **art behind the glass**, driven by config:
-  - `aurora` — drifting colour blobs (default),
+  - `aurora` — colour blobs (static by default; enable `ambient.aurora.motion` to drift them),
   - `image` — one or more artworks, with dark/light variants and per-mode overlays,
   - `video` — a muted looping video layer,
   - `html` / `view` — **any custom objects** (SVG shapes, rings, floating orbs, particles, a canvas…),
@@ -260,6 +260,15 @@ The palette is **not** part of the glass config — the theme reads the panel's 
 - Glass blur is capped on `< 1024px` for performance (`--lg-glass-blur` is reduced by the stylesheet).
 - Ambient motion is disabled by `prefers-reduced-motion`; blur/transparency degrade gracefully with `prefers-reduced-transparency`, `@supports not (backdrop-filter)`, and print.
 - Sidebar collapse state is handled by Filament; the floating margins/radius persist for both expanded and collapsed rails.
+
+---
+
+## Performance
+
+- **Ambient motion is opt-in** (`ambient.aurora.motion => true`). Animating four large blurred, blended layers keeps Chrome's compositor busy every frame, even when the page is idle — very noticeable on Windows and low-power GPUs. Static art keeps the same look with zero idle compositing.
+- Keep the ambient layer static unless you specifically want motion; if you enable it, test on your target hardware.
+- Blur is applied to a small set of glass surfaces. Lower `glass.blur` (e.g. `16`) if scrolling feels heavy on low-end machines.
+- Avoid large full-screen videos; a single image artwork is cheaper than animated blobs.
 
 ---
 

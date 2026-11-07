@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.0] - 2026-11-07
+
+### Changed
+
+- Ambient aurora is **static by default** for performance: animating four large blurred, blended fixed layers forces continuous compositor work even while idle (especially on Windows). Motion is now opt-in via `ambient.aurora.motion => true`.
+- Reduced default aurora blur from 56/64px to 44/48px and removed `will-change` from static art.
+- Documented the performance trade-off and the opt-in motion setting.
+
+
 All notable changes to `osamaelnagar/filament-liquid-glass` are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 

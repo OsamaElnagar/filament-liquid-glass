@@ -95,4 +95,19 @@ class PluginTest extends TestCase
 
         $this->assertSame('', trim($html));
     }
+
+    public function test_ambient_motion_is_opt_in(): void
+    {
+        $static = view('filament-liquid-glass::style', [
+            'config' => ['ambient' => ['aurora' => ['motion' => false]]],
+        ])->render();
+
+        $this->assertStringNotContainsString('animation-name: lg-drift', $static);
+
+        $animated = view('filament-liquid-glass::style', [
+            'config' => ['ambient' => ['aurora' => ['motion' => true]]],
+        ])->render();
+
+        $this->assertStringContainsString('animation-name: lg-drift', $animated);
+    }
 }

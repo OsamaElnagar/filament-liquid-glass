@@ -55,8 +55,8 @@ return [
             'colors_light' => ['#b3a8ff', '#9be9f5', '#ffb9dd', '#a9f0d8'],
             'strength' => 0.48,
             'strength_light' => 0.42,
-            'blur' => 56,
-            'motion' => true,
+            'blur' => 44,
+            'motion' => false, // opt-in: animating the big blurred layers forces continuous compositing/repainting
             'top_glow' => true,
         ],
 

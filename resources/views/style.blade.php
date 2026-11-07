@@ -75,7 +75,7 @@
         --lg-aurora-3: {{ $lightColors[2] }};
         --lg-aurora-4: {{ $lightColors[3] }};
         --lg-aurora-strength: {{ $numeric($aurora['strength_light'] ?? null, 0.42) }};
-        --lg-aurora-blur: {{ $px($aurora['blur'] ?? null, 56) }};
+        --lg-aurora-blur: {{ $px($aurora['blur'] ?? null, 44) }};
 
         --lg-art-opacity: {{ $artOpacity }};
         --lg-art-blur: {{ $artBlur }};
@@ -154,9 +154,13 @@
         }
     @endif
 
-    @if (($config['ambient']['aurora']['motion'] ?? true) === false)
+    @if (($config['ambient']['aurora']['motion'] ?? false) === true)
         .lg-ambient__blob {
-            animation: none;
+            animation-name: lg-drift;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            will-change: transform;
         }
     @endif
 </style>
