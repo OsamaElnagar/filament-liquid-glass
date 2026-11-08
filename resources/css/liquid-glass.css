@@ -1284,3 +1284,29 @@ html:not(.dark) .lg-ambient__overlay--light {
 .fi-page-content > * {
     min-width: 0;
 }
+
+/* Mobile stacked tables: use the same glass language as the cards instead of
+   a flat list. Filament's stacked mode converts rows to block layout below
+   the `sm` breakpoint; give each row breathing room and a subtle edge. */
+@media (max-width: 639px) {
+    .fi-ta-table-stacked-on-mobile > tbody > tr:not(.fi-ta-table-stacked-header-row) {
+        margin-block: 0.6rem;
+        padding: 0.35rem 0.8rem 0.6rem;
+        border: 1px solid var(--lg-line);
+        border-radius: var(--lg-r-lg);
+        background: rgb(var(--lg-glass-tint) / 0.035);
+    }
+
+    .fi-ta-table-stacked-on-mobile .fi-ta-cell-label {
+        color: var(--lg-ink-mute);
+        font-size: 0.68rem;
+        font-weight: 650;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+    }
+
+    .fi-ta-table-stacked-on-mobile .fi-ta-cell {
+        padding-block: 0.35rem;
+        border-color: var(--lg-line);
+    }
+}

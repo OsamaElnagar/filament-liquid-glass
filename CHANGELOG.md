@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.2] - 2026-11-08
+
+### Enhanced
+
+- Styled Filament's `stackedOnMobile()` table mode so stacked rows read as inset glass cards with muted uppercase labels and proper spacing.
+- Kept stacked table styling inside the package stylesheet, ready for consumers who enable `Table::configureUsing(fn (Table $table) => $table->stackedOnMobile())` in their panel.
+
+
 ## [1.5.1] - 2026-11-08
 
 ### Fixed
