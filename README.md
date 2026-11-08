@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/cover.jpg" alt="Filament Liquid Glass — the same panel split diagonally between the dark and light themes" width="100%">
+  <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/cover.jpg" alt="Filament Liquid Glass — rich Filament panel surfaces in light and dark, with a populated orders table, lens dashboard and analytics studio" width="100%">
 </p>
 
 <h1 align="center">Filament Liquid Glass</h1>
@@ -55,43 +55,46 @@ php artisan vendor:publish --tag=filament-liquid-glass-config
 
 ## Screenshots
 
+Real panel surfaces, populated with orders, filters, charts, tables and a full component gallery — not just the empty dashboard.
+
 <table>
   <tr>
     <td align="center" width="50%">
-      <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/screenshots/dashboard-dark.jpg" alt="Dark dashboard with a floating glass sidebar, floating topbar and ambient art">
-      <br><sub><b>Dark</b> — floating sidebar + topbar over ambient art</sub>
+      <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/screenshots/orders-overview-light.jpg" alt="Light Orders Overview with filters, KPI cards and a populated order table">
+      <br><sub><b>Orders Overview</b> — filters, KPIs and a populated glass table</sub>
     </td>
     <td align="center" width="50%">
-      <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/screenshots/dashboard-light.jpg" alt="Light dashboard with a floating glass sidebar, floating topbar and pastel ambient art">
-      <br><sub><b>Light</b> — same panel, pastel art and milk glass</sub>
+      <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/screenshots/lens-dark.jpg" alt="Dark Lens Glass panel with stats, live table and object artwork">
+      <br><sub><b>Lens Glass</b> — dark material, stats and live table</sub>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/screenshots/login-dark.jpg" alt="Glass sign-in card over a dark nebula artwork">
-      <br><sub><b>Sign-in</b> — image artwork + custom SVG objects behind the glass</sub>
+      <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/screenshots/analytics-dark.jpg" alt="Analytics Studio with filter bar, four KPI cards, sparkline and donut chart">
+      <br><sub><b>Analytics Studio</b> — charts, donut and KPI surfaces</sub>
     </td>
     <td align="center">
-      <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/screenshots/dropdown-dark.jpg" alt="User menu dropdown open over the glass topbar">
-      <br><sub><b>Menus & popovers</b> — nested glass that stays legible</sub>
+      <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/screenshots/ui-kit-light.jpg" alt="Light Liquid Glass UI Kit gallery with buttons, badges and form controls">
+      <br><sub><b>UI Kit</b> — buttons, badges, forms and inputs</sub>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/screenshots/collapsed-dark.jpg" alt="Collapsed floating sidebar rail with only icons">
-      <br><sub><b>Collapsed rail</b> — margins and radius survive the collapse</sub>
+      <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/screenshots/rtl-lens.jpg" alt="Arabic RTL Lens Glass dashboard with translated labels and dates">
+      <br><sub><b>RTL</b> — Arabic labels, mirrored chrome and localized dates</sub>
     </td>
     <td align="center">
-      <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/screenshots/theme-switcher.jpg" alt="Theme switcher open in the topbar">
-      <br><sub><b>Dark ⇄ Light</b> — token sets for both modes</sub>
+      <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/screenshots/mobile-stacked.jpg" alt="Mobile stacked orders table with each row displayed as a labelled glass card">
+      <br><sub><b>Mobile tables</b> — rows stack into labelled glass cards</sub>
     </td>
   </tr>
 </table>
 
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/screenshots/mobile-dark.jpg" alt="Mobile layout on a narrow screen with full-bleed chrome" width="300">
-  <br><sub><b>Mobile</b> — floating chrome steps aside; full-bleed Filament layout</sub>
+  <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/screenshots/showcase-light.jpg" alt="Six-panel Liquid Glass showcase gallery with Aurora, Sunset, Nebula, Objects, Lens and Minimal presets">
+  <br><sub><b>Showcase</b> — six per-panel presets: aurora, photo, nebula, layered objects, lens and minimal</sub>
 </p>
+
 
 ---
 
