@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.1] - 2026-11-08
+
+### Fixed
+
+- Mobile/RTL hardening: sections and their header/action areas are now shrinkable (`min-width: 0`, wrapping action rows) so long headers and table-report KPI blocks no longer force horizontal page overflow.
+- Page-content direct children are allowed to shrink inside glass panels, preventing nested `auto-fit` grids from widening the page on 390px viewports.
+
+
 ## [1.5.0] - 2026-11-07
 
 ### Added

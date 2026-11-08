@@ -262,7 +262,7 @@ The palette is **not** part of the glass config — the theme reads the panel's 
 
 ---
 
-## Responsive behaviour
+## Responsive behaviour`n`nBelow `1024px` the floating chrome falls back to Filament's attached topbar and off-canvas drawer. Panel content is deliberately shrinkable for narrow and RTL viewports: section headers wrap their action area and custom grids use `minmax(min(..., 100%), 1fr)`. For an RTL preview, use ``?lang=ar`` (Arabic translations flip Filament to `dir="rtl"`).
 
 - Floating sidebar/topbar are **desktop-only** (`min-width: 1024px`); on mobile Filament's standard full-bleed chrome is used (no wasted margins, no clipped drawers).
 - Glass blur is capped on `< 1024px` for performance (`--lg-glass-blur` is reduced by the stylesheet).
