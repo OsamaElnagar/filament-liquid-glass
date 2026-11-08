@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/cover.jpg" alt="Filament Liquid Glass — rich Filament panel surfaces in light and dark, with a populated orders table, lens dashboard and analytics studio" width="100%">
+  <img src="https://cdn.jsdelivr.net/gh/OsamaElnagar/filament-liquid-glass@main/art/plugin-image.jpg" alt="Filament Liquid Glass — rich Filament panel surfaces in light and dark, with a populated orders table, lens dashboard and analytics studio" width="100%">
 </p>
 
 <h1 align="center">Filament Liquid Glass</h1>
