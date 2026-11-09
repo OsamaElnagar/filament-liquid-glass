@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Osama\FilamentLiquidGlass;
 
 use Illuminate\Support\ServiceProvider;

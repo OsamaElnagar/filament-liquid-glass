@@ -23,8 +23,10 @@
         "illuminate/support": "^11.28|^12.0|^13.0"
     },
     "require-dev": {
+        "larastan/larastan": "^3.9",
         "laravel/pint": "^1.24",
         "orchestra/testbench": "^11.3",
+        "phpstan/extension-installer": "^1.4",
         "phpunit/phpunit": "^12.5"
     },
     "autoload": {
@@ -39,7 +41,15 @@
     },
     "scripts": {
         "test": "vendor/bin/phpunit",
-        "format": "vendor/bin/pint"
+        "format": "vendor/bin/pint",
+        "lint": "vendor/bin/pint",
+        "lint:check": "vendor/bin/pint --test",
+        "analyse": "vendor/bin/phpstan analyse --no-progress",
+        "check": [
+            "@analyse",
+            "@lint:check",
+            "@test"
+        ]
     },
     "extra": {
         "laravel": {
@@ -49,7 +59,10 @@
         }
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
     },
     "minimum-stability": "stable"
 }

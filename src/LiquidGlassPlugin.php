@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Osama\FilamentLiquidGlass;
 
 use Filament\Contracts\Plugin;
@@ -91,14 +93,20 @@ class LiquidGlassPlugin implements Plugin
             Css::make('liquid-glass', $this->getCssPath()),
         ], package: 'osamaelnagar/filament-liquid-glass');
 
+        /** @var view-string $ambientView */
+        $ambientView = 'filament-liquid-glass::ambient';
+
+        /** @var view-string $styleView */
+        $styleView = 'filament-liquid-glass::style';
+
         $panel->renderHook(
             PanelsRenderHook::BODY_START,
-            fn (): string => view('filament-liquid-glass::ambient', ['config' => $this->getConfig()])->render(),
+            fn (): string => view($ambientView, ['config' => $this->getConfig()])->render(),
         );
 
         $panel->renderHook(
             PanelsRenderHook::STYLES_AFTER,
-            fn (): string => view('filament-liquid-glass::style', ['config' => $this->getConfig()])->render(),
+            fn (): string => view($styleView, ['config' => $this->getConfig()])->render(),
         );
     }
 

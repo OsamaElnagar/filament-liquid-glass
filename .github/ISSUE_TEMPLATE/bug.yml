@@ -1,0 +1,74 @@
+name: Bug Report
+description: Report something that is not working as expected.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Please include enough detail to reproduce it quickly.
+
+  - type: input
+    id: package-version
+    attributes:
+      label: Package Version
+      description: The `osamaelnagar/filament-liquid-glass` version.
+      placeholder: 1.5.4
+    validations:
+      required: true
+
+  - type: input
+    id: filament-version
+    attributes:
+      label: Filament Version
+      placeholder: 5.11.1
+    validations:
+      required: true
+
+  - type: input
+    id: laravel-version
+    attributes:
+      label: Laravel Version
+      placeholder: 13.40.0
+    validations:
+      required: true
+
+  - type: input
+    id: php-version
+    attributes:
+      label: PHP Version
+      placeholder: 8.3.0
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: Browser / OS
+      placeholder: Chrome 143, macOS 15 or Windows 11
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened, and what did you expect?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps To Reproduce
+      description: Include the panel provider plugin config and a minimal reproduction when possible.
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / Logs
+      description: Drag screenshots, browser console output, or server logs here.
+    validations:
+      required: false

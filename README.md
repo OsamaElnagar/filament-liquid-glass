@@ -312,6 +312,15 @@ Order of loading: Filament's stock stylesheet (layered) → the package's panel 
 - Views (to override ambient/style): `php artisan vendor:publish --tag=filament-liquid-glass-views`
 - Panel CSS is published with `php artisan filament:assets` into `public/css/osamaelnagar/filament-liquid-glass/`; re-run it after package updates.
 
+## Local development
+
+```bash
+composer install
+composer check   # PHPStan + Pint + PHPUnit
+```
+
+See [CONTRIBUTING.md](.github/CONTRIBUTING.md) for the full contribution workflow.
+
 ## Requirements
 
 - PHP `^8.2`, Filament `^5.0`
