@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.6.0 — Expandable glass textareas - 2026-11-10
+
+Textareas now grow the glass input shell with native drag-resize and field-sizing content; adds package hygiene (PHPStan/Larastan, Pint config, contributor docs, release automation).
+
 ## [1.5.2] - 2026-11-08
 
 ### Enhanced
@@ -7,14 +11,12 @@
 - Styled Filament's `stackedOnMobile()` table mode so stacked rows read as inset glass cards with muted uppercase labels and proper spacing.
 - Kept stacked table styling inside the package stylesheet, ready for consumers who enable `Table::configureUsing(fn (Table $table) => $table->stackedOnMobile())` in their panel.
 
-
 ## [1.5.1] - 2026-11-08
 
 ### Fixed
 
 - Mobile/RTL hardening: sections and their header/action areas are now shrinkable (`min-width: 0`, wrapping action rows) so long headers and table-report KPI blocks no longer force horizontal page overflow.
 - Page-content direct children are allowed to shrink inside glass panels, preventing nested `auto-fit` grids from widening the page on 390px viewports.
-
 
 ## [1.5.0] - 2026-11-07
 
@@ -24,7 +26,6 @@
 - Paired `lens` demo panel with a high-contrast colored-object scene (`/glass-lens`) plus a light variant scene for light mode.
 - Tests for the lens profile and the lens panel config.
 
-
 ## [1.4.0] - 2026-11-07
 
 ### Added
@@ -32,7 +33,6 @@
 - `glass.surface_blur` (default `false`): opt-in frosted blur on cards, tables and stat surfaces. Best for photographic/full-bleed backgrounds; costs a composited blur layer per surface.
 - Multi-panel showcase (separate app demo) exercising aurora, photographic sunset, nebula, custom objects and minimal presets.
 - Increased light/dark muted-ink contrast for section descriptions, sidebar groups and table headers on photographic backgrounds.
-
 
 ## [1.3.0] - 2026-11-07
 
@@ -42,14 +42,12 @@
 - Chrome (topbar/sidebar) is translucent with a subtle backdrop blur again; cards remain tint/rim-based for performance.
 - Updated defaults: `glass.light_tint` `.58 → .42`, `glass.dark_tint` `.065 → .055`.
 
-
 ## [1.2.2] - 2026-11-07
 
 ### Fixed
 
 - Aligned stats-overview widgets with the rest of the dashboard: removed the nested section content padding, forced a shrinkable section grid track, and removed header padding so headings, descriptions and stat cards share the page gutter on mobile and desktop.
 - Prevented the stats description from forcing the section wider than the viewport at narrow widths.
-
 
 ## [1.2.1] - 2026-11-07
 
@@ -60,7 +58,6 @@
 - Removed the full-screen blur from the modal backdrop and from callouts/empty states.
 - Demo panel idle backdrop-filter surfaces: 17 → 2; active animations: 4 → 0.
 
-
 ## [1.2.0] - 2026-11-07
 
 ### Changed
@@ -68,7 +65,6 @@
 - Ambient aurora is **static by default** for performance: animating four large blurred, blended fixed layers forces continuous compositor work even while idle (especially on Windows). Motion is now opt-in via `ambient.aurora.motion => true`.
 - Reduced default aurora blur from 56/64px to 44/48px and removed `will-change` from static art.
 - Documented the performance trade-off and the opt-in motion setting.
-
 
 All notable changes to `osamaelnagar/filament-liquid-glass` are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
