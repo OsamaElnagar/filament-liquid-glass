@@ -1310,3 +1310,18 @@ html:not(.dark) .lg-ambient__overlay--light {
         border-color: var(--lg-line);
     }
 }
+
+/* Textareas: keep the native vertical resize handle working and let typed
+   content expand the field in modern Chromium. The empty/placeholder state
+   keeps Filament's rows-based height; only a populated field is content-sized. */
+.fi-fo-textarea textarea {
+    max-height: 70vh;
+    resize: vertical;
+}
+
+@supports (field-sizing: content) {
+    .fi-fo-textarea textarea[placeholder]:not(:placeholder-shown) {
+        field-sizing: content;
+        height: auto;
+    }
+}

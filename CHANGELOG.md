@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.6.0] - 2026-11-10
+
+### Added
+
+- Resizable glass textareas: native vertical drag-resize now grows the glass input shell with the field, and modern Chromium auto-expands populated textareas via `field-sizing: content`.
+- Package hygiene: PHPStan/Larastan level 7, Pint config, `.editorconfig`, `.gitattributes` export rules, contributing guide, bug template, funding metadata, release notes and changelog automation.
+
+### Fixed
+
+- A resized textarea could grow outside its `.fi-input-wrp` glass shell instead of expanding the shell with it.
+
+
 ## [1.5.2] - 2026-11-08
 
 ### Enhanced
